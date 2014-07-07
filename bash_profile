@@ -13,6 +13,10 @@ PATH=$PATH:$HOME/bin
 
 export PATH
 
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
 alias rmsc='rm screenshot*'
 
 alias gs='git status'
