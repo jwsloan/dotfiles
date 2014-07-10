@@ -17,3 +17,7 @@ alias rhub='r && cd elp-hub'
 alias rdr='r $$ cd dr-elp'
 
 alias view='vim -R'
+
+function allstat() { svn status --ignore-externals  cfmain dr dr/sites/elp share/cfccomponents/ | grep -ve "^[\t ]*X"; }
+function alldiff() { svn diff $@ cfmain dr share/cfccomponents dr/sites/elp; }
+function allup()   { svn up $@ cfmain dr share/cfccomponents dr/sites/elp; }

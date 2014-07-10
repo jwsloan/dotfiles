@@ -17,30 +17,6 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-alias rmsc='rm screenshot*'
-
-alias gs='git status'
-
-alias dm='diffmerge'
-alias up='svn up'
-alias stu='svn status -u'
-
-alias lt='cd /var/webapps/lampo.trunk'
-alias lr='cd /var/webapps/lampo.release'
-alias cfc='lt && cd share/cfccomponents'
-alias cfmain='lt && cd cfmain'
-alias dr='lt && cd dr'
-alias hub='dr && cd sites/elp'
-alias r='cd ~/Projects'
-alias rhub='r && cd elp-hub'
-alias rdr='r $$ cd dr-elp'
-
-alias view='vim -R'
-
-function allstat() { svn status --ignore-externals  cfmain dr dr/sites/elp share/cfccomponents/ | grep -ve "^[\t ]*X"; }
-function alldiff() { svn diff $@ cfmain dr share/cfccomponents dr/sites/elp; }
-function allup()   { svn up $@ cfmain dr share/cfccomponents dr/sites/elp; }
-
 export PROMPT_COMMAND=
 
 #nathan's
