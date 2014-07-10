@@ -3,6 +3,14 @@
  * http://www.leancrew.com/all-this/2012/11/shift-control-option-command-on-caps-lock/ */
 var hyper = ':ctrl;shift;alt;cmd';
 
+//Configs
+S.cfga({
+    "defaultToCurrentScreen" : true,
+    "secondsBetweenRepeat" : 0.1,
+    "checkDefaultsOnLoad" : true,
+    "focusCheckWidthMax" : 3000,
+    "orderScreensLeftToRight" : true
+});
 
 S.bnda({
     "right:ctrl;shift;alt;cmd" : S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX/2" }),
@@ -13,6 +21,6 @@ S.bnda({
     "esc:ctrl;shift;alt;cmd" : S.op("hint"),
     
     // Grid
-    "esc:ctrl;shift;alt;cmd" : S.op("grid")
+    "esc:ctrl" : S.op("grid")
 });
 
