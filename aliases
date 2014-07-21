@@ -1,6 +1,12 @@
+alias a!='alias | grep '
+
 alias rmsc='rm screenshot*'
 
+alias gdt='git difftool'
 alias gs='git status'
+alias gcam='git commit -am '
+
+alias rct='rails c test'
 
 alias dm='diffmerge'
 alias up='svn up'
@@ -9,7 +15,6 @@ alias stu='svn status -u'
 alias lt='cd /var/webapps/lampo.trunk'
 alias lr='cd /var/webapps/lampo.release'
 alias cfc='lt && cd share/cfccomponents'
-alias cfmain='lt && cd cfmain'
 alias dr='lt && cd dr'
 alias hub='dr && cd sites/elp'
 alias r='cd ~/Projects'
