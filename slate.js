@@ -5,11 +5,11 @@ var hyper = ':ctrl;shift;alt;cmd';
 
 //Configs
 S.cfga({
-    "defaultToCurrentScreen" : true,
-    "secondsBetweenRepeat" : 0.1,
-    "checkDefaultsOnLoad" : true,
-    "focusCheckWidthMax" : 3000,
-    "orderScreensLeftToRight" : true
+  "defaultToCurrentScreen" : true,
+  "secondsBetweenRepeat" : 0.1,
+  "checkDefaultsOnLoad" : true,
+  "focusCheckWidthMax" : 3000,
+  "orderScreensLeftToRight" : true
 });
 
 var bindings = {};
@@ -30,6 +30,21 @@ bindings["esc" + hyper] = S.op("hint");
 
 // Grid
 bindings["esc:ctrl"] = S.op("grid");
+
+//resize
+function addResizeBinding(num,width) {
+  bindings[num.toString() + hyper] = function(win) {
+    var a = win.resize({
+      "width" : width,
+      "height" : "screenSizeY"
+    });
+  }
+}
+
+for (var i = 3; i<7; i++) {
+  var newWidth = (S.screen().visibleRect().width/i).toFixed();
+  addResizeBinding(i,newWidth);
+}
 
 S.bnda(bindings);
 
