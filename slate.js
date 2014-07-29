@@ -12,23 +12,24 @@ S.cfga({
     "orderScreensLeftToRight" : true
 });
 
-S.bnda({
-    //pushs
-    "right:ctrl;shift;alt;cmd" : S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX/2" }),
-    "left:ctrl;shift;alt;cmd" : S.op("push", { "direction" : "left", "style" : "bar-resize:screenSizeX/2" }),
-    "up:ctrl;shift;alt;cmd" : S.op("push", { "direction" : "top", "style" : "bar-resize:screenSizeY/2" }),
-    "down:ctrl;shift;alt;cmd" : S.op("push", { "direction" : "bottom", "style" : "bar-resize:screenSizeY/2" }),
+var bindings = {};
 
-    //corners
-    "u:ctrl;shift;alt;cmd" : S.op("corner", { "direction" : "top-left" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"}),
-    "o:ctrl;shift;alt;cmd" : S.op("corner", { "direction" : "top-right" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"}),
-    "n:ctrl;shift;alt;cmd" : S.op("corner", { "direction" : "bottom-left" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"}),
-    ".:ctrl;shift;alt;cmd" : S.op("corner", { "direction" : "bottom-right" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"}),
+bindings["right" + hyper] = S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX/2" });
+bindings["left" + hyper] = S.op("push", { "direction" : "left", "style" : "bar-resize:screenSizeX/2" });
+bindings["up" + hyper] = S.op("push", { "direction" : "top", "style" : "bar-resize:screenSizeY/2" });
+bindings["down" + hyper] = S.op("push", { "direction" : "bottom", "style" : "bar-resize:screenSizeY/2" });
 
-    // Window Hints
-    "esc:ctrl;shift;alt;cmd" : S.op("hint"),
-    
-    // Grid
-    "esc:ctrl" : S.op("grid")
-});
+//corners
+bindings["u" + hyper] = S.op("corner", { "direction" : "top-left" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"});
+bindings["o" + hyper] = S.op("corner", { "direction" : "top-right" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"});
+bindings["n" + hyper] = S.op("corner", { "direction" : "bottom-left" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"});
+bindings["." + hyper] = S.op("corner", { "direction" : "bottom-right" , "width" : "screenSizeX/2", "height" : "screenSizeY/2"});
+
+// Window Hints
+bindings["esc" + hyper] = S.op("hint");
+
+// Grid
+bindings["esc:ctrl"] = S.op("grid");
+
+S.bnda(bindings);
 
