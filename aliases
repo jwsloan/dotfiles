@@ -7,6 +7,8 @@ alias gs='git status'
 alias gcam='git commit -am '
 
 alias rct='rails c test'
+alias rdbr='rake db:refresh'
+alias rdbrt='rake db:refresh RAILS_ENV=test'
 
 alias dm='diffmerge'
 alias up='svn up'
