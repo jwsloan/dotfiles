@@ -27,3 +27,5 @@
 	tool = diffmerge
 [difftool]
 	prompt = false
+[push]
+	default = matching
