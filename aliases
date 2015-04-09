@@ -25,6 +25,7 @@ alias r='cd ~/Projects'
 alias rhub='r && cd elp-hub'
 alias drelp='r && cd dr-elp'
 alias partnership='cd /private/var/webapps/developer/workspace/partnership'
+alias opportunity='cd /private/var/webapps/developer/workspace/elp.opportunity'
 
 alias view='vim -R'
 
@@ -40,7 +41,19 @@ function allmerge() {
   svn merge https://svn.peace.daveramsey.com/trunk/daveramsey_com cfmain $*
   allstat
 }
+
 function tod() {
   t d all -s "$1" -e "$1" -r -f text $2
+}
 
+function fcsync() {
+  cdir=${PWD}
+  cd ~/Projects/content-sdk
+  bundle exec ./bin/content sync_item $1 test qa --user-id=706 --force --approve
+  bundle exec ./bin/content sync_item $1 test stage --user-id=706 --force --approve
+  cd $cdir
+}
+
+function difftr() {
+  diffmerge /var/webapps/lampo.release/$1 /var/webapps/lampo.trunk/$1
 }
