@@ -22,3 +22,11 @@ source $HOME/.aliases
 #ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 #ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 #ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.3.3
+export M2=$M2_HOME/bin
+export GOPATH=$HOME/gocode
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$M2
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export JAVA_HOME=$(/usr/libexec/java_home)

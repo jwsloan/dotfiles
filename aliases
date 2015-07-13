@@ -5,8 +5,10 @@ alias rmsc='rm screenshot*'
 alias rsgdt='rm -rf spec/vcr_cassettes && gco spec/vcr_cassettes && gdt'
 
 alias gdt='git difftool'
+alias gdts='gdt --staged'
 alias gs='git status'
 alias gcam='git commit -am '
+alias gi='git add -i'
 
 alias rct='rails c test'
 alias rdbr='rake db:refresh'
@@ -25,11 +27,20 @@ alias r='cd ~/Projects'
 alias rhub='r && cd elp-hub'
 alias drelp='r && cd dr-elp'
 alias partnership='cd /private/var/webapps/developer/workspace/partnership'
+alias referral='cd /private/var/webapps/developer/workspace/elp.referral'
 alias opportunity='cd /private/var/webapps/developer/workspace/elp.opportunity'
 
 alias view='vim -R'
 
 alias svnconf='sudo vim ~/.subversion/config'
+
+function ts() {t s $1 && t i ${@:2} }
+function tr() {t s $1 && t r ${@:2} }
+alias tm='ts meetings'
+alias tg='ts general'
+alias tt='ts timesheet'
+
+alias mcp='mvn clean package'
 
 function allstat() { svn status --ignore-externals  cfmain dr dr/sites/elp share/cfccomponents/ | grep -ve "^[\t ]*X"; }
 function alldiff() { svn diff $@ cfmain dr share/cfccomponents dr/sites/elp; }
@@ -50,10 +61,15 @@ function fcsync() {
   cdir=${PWD}
   cd ~/Projects/content-sdk
   bundle exec ./bin/content sync_item $1 test qa --user-id=706 --force --approve
-  bundle exec ./bin/content sync_item $1 test stage --user-id=706 --force --approve
   cd $cdir
 }
 
 function difftr() {
   diffmerge /var/webapps/lampo.release/$1 /var/webapps/lampo.trunk/$1
+}
+
+function restartPS() {
+  sudo tomcatctl stop private-service
+  sudo rm -rf /var/tomcat/lampo/private-service/work/Catalina/localhost/*
+  sudo tomcatctl start private-service
 }
