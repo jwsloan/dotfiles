@@ -28,5 +28,6 @@ export M2=$M2_HOME/bin
 export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$M2
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/scripts
 export JAVA_HOME=$(/usr/libexec/java_home)
