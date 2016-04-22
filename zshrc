@@ -29,4 +29,7 @@ export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$M2
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home)
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
