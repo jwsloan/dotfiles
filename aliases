@@ -8,6 +8,7 @@ alias gdt='git difftool'
 alias gdts='gdt --staged'
 alias gs='git status'
 alias gcam='git commit -am '
+alias gca='git commit --amend'
 alias gi='git add -i'
 
 alias rct='rails c test'
@@ -74,4 +75,8 @@ function restartPS() {
   sudo tomcatctl stop private-service
   sudo rm -rf /var/tomcat/lampo/private-service/work/Catalina/localhost/*
   sudo tomcatctl start private-service
+}
+
+function gsa() {
+  git stash apply stash@{$1}
 }

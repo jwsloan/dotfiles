@@ -13,8 +13,8 @@ setopt appendhistory autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-plugins=(bundler git gitfast jsontools last-working-dir macports rails rvm sudo wd osx ruby git-prompt git-extras )
-ZSH_THEME="timetrap"
+plugins=(bundler git gitfast jsontools last-working-dir macports rails rvm sudo wd osx ruby git-prompt git-extras emoji emotty)
+ZSH_THEME="sloan"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 #ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
@@ -31,3 +31,8 @@ export PATH=$PATH:$M2
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/scripts
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+iterm2_print_user_vars() {
+    iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}
