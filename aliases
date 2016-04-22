@@ -8,6 +8,7 @@ alias gdt='git difftool'
 alias gdts='gdt --staged'
 alias gs='git status'
 alias gcam='git commit -am '
+alias gca='git commit --amend'
 alias gi='git add -i'
 
 alias rct='rails c test'
@@ -26,9 +27,10 @@ alias hub='dr && cd sites/elp'
 alias r='cd ~/Projects'
 alias rhub='r && cd elp-hub'
 alias drelp='r && cd dr-elp'
-alias partnership='cd /private/var/webapps/developer/workspace/partnership'
+alias partnership='cd /private/var/webapps/developer/workspace/elp.partnership'
 alias referral='cd /private/var/webapps/developer/workspace/elp.referral'
 alias opportunity='cd /private/var/webapps/developer/workspace/elp.opportunity'
+alias fitnesse='cd /private/var/webapps/developer/workspace/fitnesse/fitnesse-tests'
 
 alias view='vim -R'
 
@@ -53,6 +55,7 @@ function allmerge() {
   allstat
 }
 
+
 function tod() {
   t d all -s "$1" -e "$1" -r -f text $2
 }
@@ -72,4 +75,8 @@ function restartPS() {
   sudo tomcatctl stop private-service
   sudo rm -rf /var/tomcat/lampo/private-service/work/Catalina/localhost/*
   sudo tomcatctl start private-service
+}
+
+function gsa() {
+  git stash apply stash@{$1}
 }

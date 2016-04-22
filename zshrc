@@ -13,8 +13,8 @@ setopt appendhistory autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-plugins=(bundler git gitfast jsontools last-working-dir macports rails rvm sudo wd osx ruby git-prompt git-extras )
-ZSH_THEME="timetrap"
+plugins=(bundler git gitfast jsontools last-working-dir macports rails rvm sudo wd osx ruby git-prompt git-extras emoji emotty)
+ZSH_THEME="sloan"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 #ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
@@ -33,3 +33,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=$PATH:$HOME/scripts
+
