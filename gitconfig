@@ -9,6 +9,11 @@
 [alias]
 	sourcetree = !open -a SourceTree .
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	forcepush = push --force-with-lease
+    ignore = update-index --assume-unchanged         
+    unignore = update-index --no-assume-unchanged        
+    ignored = !git ls-files -v | grep ^[a-z]
+    wip = commit -a --amend --no-edit
 [branch]
 	autosetuprebase = always
 [user]
@@ -28,7 +33,7 @@
 [difftool]
 	prompt = false
 [push]
-	default = matching
+	default = current
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
