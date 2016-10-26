@@ -3,21 +3,21 @@ if [ -f ~/.bashrc ]; then
 . ~/.bashrc
 fi
 
-if [ -f ~/.git-prompt.sh ]; then
-  . ~/.git-prompt.sh
-fi
+#if [ -f ~/.git-prompt.sh ]; then
+#  . ~/.git-prompt.sh
+#fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin
+#PATH=$PATH:$HOME/bin
 
-export PATH
+#export PATH
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
+#if [ -f ~/.aliases ]; then
+#    . ~/.aliases
+#fi
 
-export PROMPT_COMMAND=
+#export PROMPT_COMMAND=
 
 #nathan's
 # export PS1='\n\[\e[0;37m\].....[ \[\e[1;33m\]$(/bin/date "+%Y-%m-%d %H:%M:%S")\[\e[0;37m\] ].....[ \[\e[1;36m\]$(pwd|awk -F\/ "{print \$(NF-1),\$(NF)}" | sed "s/ /\\//")\[\e[0;37m\] ].....\n\[\e[0m\]$ '
@@ -25,16 +25,16 @@ export PROMPT_COMMAND=
 # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "\[\033[01;33m\](%s)\[\033[00m\]")$ '
 
 # enable git unstaged indicators - set to a non-empty value
-GIT_PS1_SHOWDIRTYSTATE="."
+#GIT_PS1_SHOWDIRTYSTATE="."
  
 # enable showing of untracked files - set to a non-empty value
-GIT_PS1_SHOWUNTRACKEDFILES="."
+#GIT_PS1_SHOWUNTRACKEDFILES="."
  
 # enable stash checking - set to a non-empty value
-GIT_PS1_SHOWSTASHSTATE="."
+#GIT_PS1_SHOWSTASHSTATE="."
  
 # enable showing of HEAD vs its upstream
-GIT_PS1_SHOWUPSTREAM="auto"
+#GIT_PS1_SHOWUPSTREAM="auto"
  
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
@@ -59,7 +59,7 @@ UNDERLINE=$(tput smul)
 # this prompt uses the short colour codes defined above
 
 # Merge of Nathan's with the another
-PS1='\n\[\e[0;37m\] ... \[\e[1;33m\]${GREEN}$(/bin/date "+%Y-%m-%d %H:%M:%S")\[\e[0;37m\] ... ${MAGENTA}\w`__git_ps1 " ... ${RED}%s ... "`\n\[\e[0m\]$ '
+#PS1='\n\[\e[0;37m\] ... \[\e[1;33m\]${GREEN}$(/bin/date "+%Y-%m-%d %H:%M:%S")\[\e[0;37m\] ... ${MAGENTA}\w`__git_ps1 " ... ${RED}%s ... "`\n\[\e[0m\]$ '
  
 # this is a cyan username, @ symbol and host, magenta current working directory and white git branch
 # it uses the shorter , but visibly more complex, codes for text colours (shorter because the colour code definitions aren't needed)
@@ -82,4 +82,4 @@ function set_prefix {
  
 # PS1='${MAGENTA}\u${WHITE} in ${GREEN}\w${WHITE}${MAGENTA}`__git_ps1 " on %s"`${WHITE}\r\n`set_prefix`${NORMAL}${CYAN}33[s33[60C (`date "+%a, %b %d %H:%M"`)33[u${WHITE} '
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

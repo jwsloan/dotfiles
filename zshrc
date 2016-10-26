@@ -13,8 +13,8 @@ setopt appendhistory autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-plugins=(bundler git gitfast jsontools last-working-dir macports rails rvm sudo wd osx ruby git-prompt git-extras emoji emotty)
-ZSH_THEME="sloan"
+plugins=(bundler git gitfast jsontools last-working-dir macports rails sudo wd osx ruby git-extras emoji emotty)
+ZSH_THEME="steeef"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 #ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
@@ -28,10 +28,13 @@ export M2=$M2_HOME/bin
 export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$M2
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/heroku/bin:$PATH
 export PATH=$PATH:$HOME/scripts
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export DISPLAY="localhost:0"
