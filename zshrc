@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/john.sloan/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -35,6 +35,14 @@ export PATH=$PATH:$M2
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=$PATH:$HOME/scripts
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export DISPLAY="localhost:0"
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export PATH=$PATH:/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export PATH=$PATH:/usr/local/go/bin
+
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH" 
+export PATH="$PATH:/mnt/c/Program\ Files/Docker\ Toolbox"
+
+export DOCKER_TLS_VERIFY=0
+export DOCKER_HOST=tcp://$(cd /mnt/c && docker-machine.exe ip):2376
