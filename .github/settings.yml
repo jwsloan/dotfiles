@@ -1,0 +1,10 @@
+labels:
+  - name: somelabel
+    color: CC0000
+
+branches:
+  - name: 'master'
+    protection:
+      enforce_admins: true
+      required_pull_request_reviews:
+        dismiss_stale_reviews: true
