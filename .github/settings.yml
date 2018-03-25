@@ -19,5 +19,3 @@ branches:
         dismiss_stale_reviews: true
         # Blocks merge until code owners have reviewed.
         require_code_owner_reviews: false
-      # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
-      restrictions: null
