@@ -2,7 +2,7 @@ labels:
   - name: somelabel
     color: CC0000
   - name: another
-    color: AABBCC
+    color: 00FF00
 
 branches:
   - name: 'master'
