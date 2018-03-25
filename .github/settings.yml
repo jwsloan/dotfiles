@@ -1,10 +1,3 @@
-labels:
-  - name: bug
-    color: CC0000
-  - name: feature
-    color: 336699
-  - name: first-timers-only
-
 branches:
   - name: 'master'
     # https://developer.github.com/v3/repos/branches/#update-branch-protection
@@ -27,6 +20,4 @@ branches:
         # Blocks merge until code owners have reviewed.
         require_code_owner_reviews: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
-      restrictions:
-        users: ["jwsloan"]
-        teams: []
+     restrictions:
