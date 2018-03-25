@@ -1,6 +1,8 @@
 labels:
   - name: somelabel
     color: CC0000
+  - name: another
+    color: AABBCC
 
 branches:
   - name: 'master'
