@@ -45,4 +45,17 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PATH="$PATH:/mnt/c/Program\ Files/Docker\ Toolbox"
 
 export DOCKER_TLS_VERIFY=0
-export DOCKER_HOST=tcp://$(cd /mnt/c && docker-machine.exe ip):2376
+export DOCKER_HOST=tcp://$(docker-machine.exe ip):2376
+export DOCKER_CERT_PATH=/mnt/c/Users/jwslo/.docker/machine/machines/default
+export DOCKER_MACHINE_NAME=default
+export COMPOSE_CONVERT_WINDOWS_PATHS=true
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+# getting-started Token
+export GITHUB_TOKEN=4a0dc5961a57e95d1c9704bd34695b0c9a0b00b2
