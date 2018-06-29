@@ -22,7 +22,4 @@ branches:
         dismiss_stale_reviews: false
         # Blocks merge until code owners have reviewed.
         require_code_owner_reviews: false
-      restrictions: {
-        users: [],
-        teams: []
-      }
+      restrictions: 'null'
