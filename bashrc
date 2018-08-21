@@ -25,3 +25,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
   popd > /dev/null
   # Change /mnt/c/ to /c/ in current working directory path
   cd $(pwd | sed 's/\/mnt\/c\//\/c\//')
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

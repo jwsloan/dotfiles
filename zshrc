@@ -4,6 +4,7 @@ zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -13,10 +14,14 @@ setopt appendhistory autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-plugins=(bundler git gitfast jsontools last-working-dir macports rails sudo wd osx ruby git-extras emoji emotty)
+plugins=(bundler git gitfast sudo wd ruby git-extras)
+#plugins=(bundler git gitfast jsontools last-working-dir sudo wd ruby git-extras emoji emotty)
 ZSH_THEME="steeef"
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+
 #ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 #ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 #ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
@@ -59,3 +64,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # getting-started Token
 export GITHUB_TOKEN=4a0dc5961a57e95d1c9704bd34695b0c9a0b00b2
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+#[[ -f /home/john/.nvm/versions/node/v10.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/john/.nvm/versions/node/v10.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+
