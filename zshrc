@@ -1,10 +1,11 @@
 ZSH=$HOME/.oh-my-zsh
+echo "compinit..."
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
-
+echo "compinit complete"
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -14,12 +15,14 @@ setopt appendhistory autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-plugins=(bundler git gitfast sudo wd ruby git-extras)
+plugins=(sudo)
 #plugins=(bundler git gitfast jsontools last-working-dir sudo wd ruby git-extras emoji emotty)
 ZSH_THEME="steeef"
 ZSH_DISABLE_COMPFIX=true
 
+echo "start oh-my-zsh..."
 source $ZSH/oh-my-zsh.sh
+echo "create aliases..."
 source $HOME/.aliases
 
 #ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
@@ -48,24 +51,24 @@ export PATH=$PATH:/usr/local/go/bin
 
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH" 
 export PATH="$PATH:/mnt/c/Program\ Files/Docker\ Toolbox"
-
+echo "Set Docker ENVs..."
 export DOCKER_TLS_VERIFY=0
 export DOCKER_HOST=tcp://$(docker-machine.exe ip):2376
 export DOCKER_CERT_PATH=/mnt/c/Users/jwslo/.docker/machine/machines/default
 export DOCKER_MACHINE_NAME=default
 export COMPOSE_CONVERT_WINDOWS_PATHS=true
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+echo "Load asdf.."
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-
+echo "asdf loaded"
 # getting-started Token
 export GITHUB_TOKEN=4a0dc5961a57e95d1c9704bd34695b0c9a0b00b2
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 #[[ -f /home/john/.nvm/versions/node/v10.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/john/.nvm/versions/node/v10.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
-
+clear
