@@ -1,6 +1,8 @@
 [core]
-	excludesfile = /home/john/.gitignore_global
+	excludesfile = /home/jsloan/.gitignore_global
 	editor = vim
+	fileMode = false
+	autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

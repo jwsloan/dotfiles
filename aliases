@@ -13,3 +13,11 @@ alias gco='git checkout'
 function gsa() {
   git stash apply stash@{$1}
 }
+
+function envpass() { read -s $1; export $1; }
+# AWS Console Aliases
+alias awsc="source ~/aws/bin/activate"
+alias awsd="deactivate"
+alias awsl="okta-aws default"
+alias awsecr="aws ecr get-login --registry-ids 674907502808 --region us-east-1 --no-include-email"
+# alias awslecs="eval $(aws ecr get-login --registry-ids 674907502808 --region us-east-1 --no-include-email)"

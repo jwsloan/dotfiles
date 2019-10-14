@@ -52,10 +52,11 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH" 
 export PATH="$PATH:/mnt/c/Program\ Files/Docker\ Toolbox"
 echo "Set Docker ENVs..."
-export DOCKER_TLS_VERIFY=0
-export DOCKER_HOST=tcp://$(docker-machine.exe ip):2376
-export DOCKER_CERT_PATH=/mnt/c/Users/jwslo/.docker/machine/machines/default
-export DOCKER_MACHINE_NAME=default
+export DOCKER_HOST=tcp://localhost:2375
+#export DOCKER_TLS_VERIFY=0
+#export DOCKER_HOST=tcp://$(docker-machine.exe ip):2376
+#export DOCKER_CERT_PATH=/mnt/c/Users/jwslo/.docker/machine/machines/default
+#export DOCKER_MACHINE_NAME=default
 export COMPOSE_CONVERT_WINDOWS_PATHS=true
 
 #export NVM_DIR="$HOME/.nvm"
@@ -65,8 +66,20 @@ echo "Load asdf.."
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 echo "asdf loaded"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.local/bin:$PATH"
+
 # getting-started Token
 export GITHUB_TOKEN=4a0dc5961a57e95d1c9704bd34695b0c9a0b00b2
+
+#OktaAWSCLI
+if [[ -f "$HOME/.okta/bash_functions" ]]; then
+    . "$HOME/.okta/bash_functions"
+fi
+if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
+    PATH="$HOME/.okta/bin:$PATH"
+fi
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
