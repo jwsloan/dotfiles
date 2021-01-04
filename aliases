@@ -80,3 +80,12 @@ function restartPS() {
 function gsa() {
   git stash apply stash@{$1}
 }
+
+
+function pipenv() {
+  if [ -e "./Pipfile" ]; then
+   `whence -p pipenv` "$@"
+  else 
+    echo "No Pipfile found!"
+  fi 
+}

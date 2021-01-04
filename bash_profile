@@ -1,3 +1,4 @@
+echo 'bash_profile'
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 . ~/.bashrc
@@ -59,7 +60,7 @@ UNDERLINE=$(tput smul)
 # this prompt uses the short colour codes defined above
 
 # Merge of Nathan's with the another
-PS1='\n\[\e[0;37m\] ... \[\e[1;33m\]${GREEN}$(/bin/date "+%Y-%m-%d %H:%M:%S")\[\e[0;37m\] ... ${MAGENTA}\w`__git_ps1 " ... ${RED}%s ... "`\n\[\e[0m\]$ '
+# PS1='\n\[\e[0;37m\] ... \[\e[1;33m\]${GREEN}$(/bin/date "+%Y-%m-%d %H:%M:%S")\[\e[0;37m\] ... ${MAGENTA}\w`__git_ps1 " ... ${RED}%s ... "`\n\[\e[0m\]$ '
  
 # this is a cyan username, @ symbol and host, magenta current working directory and white git branch
 # it uses the shorter , but visibly more complex, codes for text colours (shorter because the colour code definitions aren't needed)
@@ -82,4 +83,19 @@ function set_prefix {
  
 # PS1='${MAGENTA}\u${WHITE} in ${GREEN}\w${WHITE}${MAGENTA}`__git_ps1 " on %s"`${WHITE}\r\n`set_prefix`${NORMAL}${CYAN}33[s33[60C (`date "+%a, %b %d %H:%M"`)33[u${WHITE} '
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/johnsloan/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/johnsloan/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/johnsloan/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/johnsloan/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

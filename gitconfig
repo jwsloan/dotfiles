@@ -19,7 +19,7 @@
 	autosetuprebase = always
 [user]
 	name = John Sloan
-	email = john.sloan@daveramsey.com
+	email = jsloan@xoi.io
 [color]
 	ui = true
 [diff]
@@ -36,6 +36,7 @@
 [push]
 	default = current
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process

@@ -1,3 +1,4 @@
+echo 'bashrc'
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 . /etc/bashrc
@@ -10,6 +11,9 @@ fi
 source ~/git-completion.bash
 
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 exec `which zsh`
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
