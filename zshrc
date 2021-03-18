@@ -19,7 +19,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 plugins=(git gitfast jsontools last-working-dir pipenv sudo wd osx git-prompt git-extras emoji emotty)
-ZSH_THEME="avit"
+ZSH_THEME="amuse"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 #ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
@@ -28,32 +28,32 @@ source $HOME/.aliases
 #ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 #ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-export M2_HOME=/usr/local/apache-maven/apache-maven-3.3.3
-export M2=$M2_HOME/bin
-export GOPATH=$HOME/gocode
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$M2
+# export M2_HOME=/usr/local/apache-maven/apache-maven-3.3.3
+# export M2=$M2_HOME/bin
+# export GOPATH=$HOME/gocode
+# export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$M2
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:$HOME/scripts
 # export PATH="~/miniconda3/bin:$PATH"  # commented out by conda initialize
 export XOI_STAGE=johnsloan
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/johnsloan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/johnsloan/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/johnsloan/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/johnsloan/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$('/Users/johnsloan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/johnsloan/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/johnsloan/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/johnsloan/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
 
 
@@ -70,3 +70,4 @@ unset __conda_setup
 . /usr/local/opt/asdf/asdf.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export JAVA_HOME=\$(/usr/libexec/java_home -v 1.8)
