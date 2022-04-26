@@ -18,7 +18,7 @@ setopt appendhistory autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-plugins=(git gitfast jsontools last-working-dir pipenv sudo wd osx git-prompt git-extras emoji emotty)
+plugins=(asdf git gitfast jsontools sudo wd macos git-prompt git-extras emoji emotty)
 ZSH_THEME="amuse"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -67,7 +67,11 @@ export XOI_STAGE=johnsloan
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/johnsloan/projects/vision-stratus/vision-nx-jobs/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/johnsloan/projects/vision-stratus/vision-nx-jobs/node_modules/tabtab/.completions/slss.zsh
 
-. /usr/local/opt/asdf/asdf.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export JAVA_HOME=\$(/usr/libexec/java_home -v 1.8)
+#export JAVA_HOME=\$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(asdf where java)
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export PATH="$HOME/.cargo/bin:$PATH"
